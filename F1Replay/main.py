@@ -1,6 +1,6 @@
 import requests
 import json
-from multiprocessing import Process, Manager 
+from multiprocessing import Process, Manager
 
 
 def open_config(config_or_key: str):
@@ -107,11 +107,11 @@ def other_parallel():
     """
     driver_details = fetch_driver()
     if not driver_details:
-        return "Driver information won't load."
+        return "It doesnt work"
 
     final_results = fetch_session_results()
     if not final_results:
-        return "Race information won't load."
+        return "It doesnt work"
 
     results_map = {}
     for r in final_results:
@@ -151,5 +151,7 @@ def other_parallel():
             print(line)
 
         print("-" * 100)
-other_parallel()
 
+
+if __name__ == "__main__":
+    other_parallel()
