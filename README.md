@@ -2,7 +2,7 @@
 Vizualizes F1 race results by fetching API from OpenF1 website. Uses multiprocessing for finishing results effectively
 
 ## Requirements 
-* **Python ^3.9**
+* **Python 3.9**
 * Libraries: [here](##Used-Libraries)
 * Internet connection
 
