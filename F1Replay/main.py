@@ -105,14 +105,13 @@ def other_parallel():
     Makes table with results of race, standings of drivers.
     :return: error messages
     """
-    try:
     driver_details = fetch_driver()
     if not driver_details:
-        raise Exception: "It doesnt work"
+        return "Driver information won't load."
 
     final_results = fetch_session_results()
     if not final_results:
-        return "It doesnt work"
+        return "Race information won't load."
 
     results_map = {}
     for r in final_results:
@@ -156,4 +155,5 @@ def other_parallel():
 
 if __name__ == "__main__":
     other_parallel()
+
 
