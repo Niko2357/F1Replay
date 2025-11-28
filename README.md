@@ -29,10 +29,10 @@ This project is using [config.json](https://github.com/Niko2357/F1Replay/blob/ma
 - session_key
   -  four place number
   -  unique race identifier
-  -  choice of different race sessions (need to exist)
+  -  choice of different race sessions (need to exist - [Possile keys]("https://openf1.org/#session-result-beta") )
 
 - api_driver and api_session_resultes
-  - API URL endpoint
+  - API URL endpoint 
 
 ## Error Handling
 The application includes basic error handling for common failure points.
