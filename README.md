@@ -46,6 +46,12 @@ The application includes basic error handling for common failure points.
 ## Version and Issues
 * Version: 1.0.0
 
+## Author
+Name: Nikola 
+Surname: Poláchová
+Subject: Programming 
+Year: 2025
+
 ## Licencing and Dependencies
 MIT License: [Licence](https://github.com/Niko2357/F1Replay/blob/main/LICENSE)
 
