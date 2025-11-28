@@ -46,13 +46,14 @@ The application includes basic error handling for common failure points.
 ## Version and Issues
 * Version: 1.0.0
 
+## Licencing and Dependencies
+MIT License: [Licence](https://github.com/Niko2357/F1Replay/blob/main/LICENSE)
+
+OpenF1: The application's functionality is entirely dependent on the availability and data format provided by the OpenF1 API. The project author is not liable for service interruptions or changes in the OpenF1 data structure.
+
+
 ## Author
 Name: Nikola 
 Surname: Poláchová
 Subject: Programming 
 Year: 2025
-
-## Licencing and Dependencies
-MIT License: [Licence](https://github.com/Niko2357/F1Replay/blob/main/LICENSE)
-
-OpenF1: The application's functionality is entirely dependent on the availability and data format provided by the OpenF1 API. The project author is not liable for service interruptions or changes in the OpenF1 data structure.
