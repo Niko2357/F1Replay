@@ -1,18 +1,6 @@
 {
-  "teams": [
-    {"name": "Red Bull", "color": "blue"},
-    {"name": "Mercedes", "color": "silver"},
-    {"name": "Ferrari", "color": "red"},
-    {"name": "McLaren", "color": "orange"},
-    {"name": "Alpine", "color": "cyan"},
-    {"name": "AlphaTauri", "color": "magenta"},
-    {"name": "Aston Martin", "color": "bright_green"},
-    {"name": "Haas", "color": "bright_yellow"},
-    {"name": "Alfa Romeo", "color": "bright_red"},
-    {"name": "Williams", "color": "bright_cyan"}
-  ],
   "race": {
-    "session_key": "9150",
+    "session_key": "9850",
     "api_timing": "https://api.openf1.org/v1/timing",
     "api_drivers": "https://api.openf1.org/v1/drivers",
     "api_laps": "https://api.openf1.org/v1/laps",
