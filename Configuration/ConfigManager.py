@@ -11,7 +11,7 @@ class ConfigManager:
         :param config_or_key: choice between whole configuration, string "config" or "key"
         :return: string value of whole file or session key or exception
         """
-        with open("config.json", "r") as f:
+        with open("Configuration//config.json", "r") as f:
             config = json.load(f)
         if config_or_key == "config":
             return config
