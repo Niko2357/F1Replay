@@ -1,17 +1,15 @@
-
+import requests
+from ConfigManager import ConfigManager
 
 
 class API:
-    def __init__(self, config):
-        self.config = config
-
     @staticmethod
     def fetch_driver():
         """
         Fetches information by API, gets driver name and team.
         :return: object driver information or exception
         """
-        config = open_config("config")
+        config = ConfigManager.open_config("config")
         api = config["race"]["api_drivers"]
         session = config["race"]["session_key"]
         try:
@@ -34,9 +32,9 @@ class API:
         Gets information about finished race from API.
         :return: whole API information about race results
         """
-        config = open_config("config")
+        config = ConfigManager.open_config("config")
         api = config["race"]["api_session_results"]
-        session = open_config("key")
+        session = ConfigManager.open_config("key")
         try:
             response = requests.get(api, params={"session_key": session})
             response.raise_for_status()
