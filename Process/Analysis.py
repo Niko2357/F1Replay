@@ -42,7 +42,7 @@ class Analysis:
             shared_output_list.append((position, output_line))
 
     @staticmethod
-    def other_parallel():
+    def parallel():
         """
         Makes table with results of race, standings of drivers.
         :return: error messages
