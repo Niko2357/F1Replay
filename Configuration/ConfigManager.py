@@ -7,7 +7,7 @@ class ConfigManager:
         """
         Opens and reads content of configuration file.
         Returns either whole configuration file with "config" input or session key in case
-        of "key" input
+        of "key" input.
         :param config_or_key: choice between whole configuration, string "config" or "key"
         :return: string value of whole file or session key or exception
         """
