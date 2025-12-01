@@ -15,11 +15,14 @@ class Analysis:
         """
         cur_data = timing_data.get(driver_num, None)
         if cur_data:
-            position = cur_data.get("position", 99)
+            r_position = cur_data.get("position")
+            try:
+                position = int(r_position)
+            except (ValueError, TypeError):
+                position = 99
             calculated_gap = cur_data.get("gap_to_leader")
             laps = cur_data.get("number_of_laps", "-")
-            gap_to = ""
-            status = ""
+            gap_to = "---"
             if cur_data.get("dsq") is True:
                 status = "DSQ"
             elif cur_data.get("dnf") is True:
@@ -29,14 +32,23 @@ class Analysis:
             else:
                 status = "Finished"
 
-            if position > 1 and calculated_gap is not None:
-                gap_to = f"{calculated_gap:+.3f}" if calculated_gap > 0 else "---"
+            if calculated_gap is not None:
+                try:
+                    gap_float = float(calculated_gap)
+                    if position > 1 and gap_float > 0:
+                        gap_to = f"{gap_float:+.3f}"
+                    else:
+                        gap_to = "---"
+                except (ValueError, TypeError):
+                    gap_to = "---"
             elif position == 1:
                 gap_to = "---"
 
-            details = driver_details.get(driver_num, {"name": f"Driver {driver_num}", "team": "N/A"})
+            details = driver_details.get(driver_num, {"name": "Unknown", "team": "N/A"})
+            driver_name = details.get("name") or "Unknown"
+            driver_team = details.get("team") or "N/A"
             output_line = (
-                f"{position:<10} | {details['name']:<20} | {details['team']:<15} | "
+                f"{position:<10} | {driver_name:<20} | {driver_team:<15} | "
                 f"{gap_to:<18} | {laps:<5} |  {status}"
             )
             shared_output_list.append((position, output_line))
