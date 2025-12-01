@@ -1,5 +1,5 @@
 import requests
-from ConfigManager import ConfigManager
+from Configuration.ConfigManager import ConfigManager
 
 
 class API:
