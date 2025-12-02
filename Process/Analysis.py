@@ -35,7 +35,7 @@ class Analysis:
             if calculated_gap is not None:
                 try:
                     gap_float = float(calculated_gap)
-                    if position > 1 and gap_float > 0:
+                    if 99 > position > 1 and gap_float > 0:
                         gap_to = f"{gap_float:+.3f}"
                     else:
                         gap_to = "---"
