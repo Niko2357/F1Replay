@@ -12,7 +12,8 @@ class API:
     def fetch_driver(session: str):
         """
         Fetches information by API, gets driver name and team.
-        :return: object driver information or exception
+        :param session: Identification key of race.
+        :return: Object driver information or exception.
         """
         config = API.race_config()
         api = config["api_drivers"]
@@ -28,13 +29,14 @@ class API:
                 }
             return details
         except Exception as e:
-            return f"Details couldnt be loaded. {e}"
+            return f"Details couldn't be loaded. {e}"
 
     @staticmethod
     def fetch_session_results(session: str):
         """
         Gets information about finished race from API.
-        :return: whole API information about race results
+        :param session: Identification key of race.
+        :return: whole API information about race results.
         """
         config = API.race_config()
         api = config["api_session_results"]
@@ -43,5 +45,4 @@ class API:
             response.raise_for_status()
             return response.json()
         except Exception as e:
-            print(f"API couldnt be loaded: {e}")
-            return []
+            return f"API couldn't be loaded: {e}"
