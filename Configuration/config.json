@@ -5,7 +5,7 @@
     "api_drivers": "https://api.openf1.org/v1/drivers",
     "api_laps": "https://api.openf1.org/v1/laps",
     "api_position": "https://api.openf1.org/v1/position",
-    "api_intervals": "https://api.openf1.org/v1/intervals",
+    "api_sessions": "https://api.openf1.org/v1/sessions",
     "api_session_results": "https://api.openf1.org/v1/session_result"
   }
 }
