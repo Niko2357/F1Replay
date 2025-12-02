@@ -7,11 +7,10 @@ class Analysis:
     def process_final_result(driver_num, timing_data, driver_details, shared_output_list):
         """
         Sorts out information about race into one line.
-        :param driver_num: number of driver, racing number
-        :param timing_data: contains all final results
-        :param driver_details: dictionary containing driver information
-        :param shared_output_list: shared list
-        :return:
+        :param driver_num: Number of driver, racing number.
+        :param timing_data: Contains all final results.
+        :param driver_details: Dictionary containing driver information.
+        :param shared_output_list: Shared list.
         """
         cur_data = timing_data.get(driver_num, None)
         if cur_data:
@@ -47,25 +46,29 @@ class Analysis:
             details = driver_details.get(driver_num, {"name": "Unknown", "team": "N/A"})
             driver_name = details.get("name") or "Unknown"
             driver_team = details.get("team") or "N/A"
-            output_line = (
-                f"{position:<10} | {driver_name:<20} | {driver_team:<15} | "
-                f"{gap_to:<18} | {laps:<5} |  {status}"
-            )
-            shared_output_list.append((position, output_line))
+            output = {
+                "Position": position,
+                "Driver": driver_name,
+                "Team": driver_team,
+                "Gap_to_Leader": gap_to,
+                "Laps": laps,
+                "Status": status
+            }
+            shared_output_list.append((position, output))
 
     @staticmethod
-    def parallel():
+    def parallel(session: str):
         """
         Makes table with results of race, standings of drivers.
-        :return: error messages
+        :return: A list of dictionaries with sorted results or error messages.
         """
-        driver_details = API.fetch_driver()
+        driver_details = API.fetch_driver(session)
         if not driver_details:
-            return "It doesnt work"
+            return "It doesn't work"
 
-        final_results = API.fetch_session_results()
+        final_results = API.fetch_session_results(session)
         if not final_results:
-            return "It doesnt work"
+            return "It doesn't work"
 
         results_map = {}
         for r in final_results:
@@ -95,14 +98,7 @@ class Analysis:
             for p in processes:
                 p.join()
 
-            print("\nRace Results")
-            print("-" * 100)
             output_data = list(shared_output_list)
             output_data.sort(key=lambda x: x[0])
-            print(
-                f"{'Position':<10} | {'Driver':<20} | {'Team':<15} | {'Gap to Leader (s)':<18} | {'Laps':<5} | {'Case'}")
-            print("-" * 100)
-            for position, line in output_data:
-                print(line)
-
-            print("-" * 100)
+            final_standings = [data for position, data in output_data]
+            return final_standings
