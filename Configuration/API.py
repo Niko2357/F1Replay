@@ -4,14 +4,18 @@ from Configuration.ConfigManager import ConfigManager
 
 class API:
     @staticmethod
-    def fetch_driver():
+    def race_config():
+        config = ConfigManager.open_config("config")
+        return config["race"]
+
+    @staticmethod
+    def fetch_driver(session: str):
         """
         Fetches information by API, gets driver name and team.
         :return: object driver information or exception
         """
-        config = ConfigManager.open_config("config")
-        api = config["race"]["api_drivers"]
-        session = config["race"]["session_key"]
+        config = API.race_config()
+        api = config["api_drivers"]
         try:
             response = requests.get(api, params={"session_key": session})
             response.raise_for_status()
@@ -27,14 +31,13 @@ class API:
             return f"Details couldnt be loaded. {e}"
 
     @staticmethod
-    def fetch_session_results():
+    def fetch_session_results(session: str):
         """
         Gets information about finished race from API.
         :return: whole API information about race results
         """
-        config = ConfigManager.open_config("config")
-        api = config["race"]["api_session_results"]
-        session = ConfigManager.open_config("key")
+        config = API.race_config()
+        api = config["api_session_results"]
         try:
             response = requests.get(api, params={"session_key": session})
             response.raise_for_status()
