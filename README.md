@@ -17,7 +17,7 @@ Vizualizes F1 race results by fetching API from OpenF1 website in local web brow
 ## Execution
 * Install libraries:
     ```bash
-    pip install requests pandas strealit
+    pip install requests pandas streamlit
     ```
     
 * Ensure [config.json](https://github.com/Niko2357/F1Replay/blob/main/F1Replay/config.json) in same directory as [Visual.py](https://github.com/Niko2357/F1Replay/blob/main/F1Replay/Visual.py)
