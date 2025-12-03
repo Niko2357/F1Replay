@@ -10,25 +10,27 @@ Vizualizes F1 race results by fetching API from OpenF1 website in local web brow
 * OpenF1 API - external Data fetch (REST API)
 * Requests - python library
 * Multiprocessing - python library
+* Streamlit - web page
+* Pandas - analysis, data structures
 
 ## Execution
 * Install libraries:
     ```bash
-    pip install requests, pandas, strealit
+    pip install requests pandas strealit
     ```
     
 * Ensure [config.json](https://github.com/Niko2357/F1Replay/blob/main/F1Replay/config.json) in same directory as [Visual.py](https://github.com/Niko2357/F1Replay/blob/main/F1Replay/Visual.py)
   
 * Execute:
      ```bash
-    python -m streamlit run Visual.py
+    python -m streamlit run F1Replay/Visual.py
     ```
 
 ## Program Configuration
 This project is using [config.json](https://github.com/Niko2357/F1Replay/blob/main/F1Replay/config.json) file.
 
 - api_drivers, api_session and api_session_resultes
-  - API URL endpoint 
+  - API URL endpoints 
 
 ## Error Handling
 The application includes basic error handling for common failure points.
