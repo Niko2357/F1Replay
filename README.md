@@ -1,8 +1,8 @@
 # F1Replay
-Vizualizes F1 race results by fetching API from OpenF1 website. Uses multiprocessing for finishing results effectively
+Vizualizes F1 race results by fetching API from OpenF1 website in local web browser. Uses multiprocessing for finishing results effectively.
 
 ## Requirements 
-* **Python 3.9**
+* **Python 3.11.x**
 * Libraries: [here](##Used-Libraries)
 * Internet connection
 
@@ -14,24 +14,20 @@ Vizualizes F1 race results by fetching API from OpenF1 website. Uses multiproces
 ## Execution
 * Install libraries:
     ```bash
-    pip install requests
+    pip install requests, pandas, strealit
     ```
     
-* Ensure [config.json](https://github.com/Niko2357/F1Replay/blob/main/F1Replay/config.json) in same directory as [main.py](https://github.com/Niko2357/F1Replay/blob/main/F1Replay/main.py)
+* Ensure [config.json](https://github.com/Niko2357/F1Replay/blob/main/F1Replay/config.json) in same directory as [Visual.py](https://github.com/Niko2357/F1Replay/blob/main/F1Replay/Visual.py)
   
 * Execute:
      ```bash
-    python F1Replay.py
+    python -m streamlit run Visual.py
     ```
 
 ## Program Configuration
 This project is using [config.json](https://github.com/Niko2357/F1Replay/blob/main/F1Replay/config.json) file.
-- session_key
-  -  four place number
-  -  unique race identifier
-  -  choice of different race sessions (need to exist - [Possible keys](https://openf1.org/#session-result-beta) )
 
-- api_driver and api_session_resultes
+- api_drivers, api_session and api_session_resultes
   - API URL endpoint 
 
 ## Error Handling
@@ -44,7 +40,9 @@ The application includes basic error handling for common failure points.
   * *return "It doesnt work"*: APIs return empty lists/dictionaries. Resolution: Check the validity of the session_key.
 
 ## Version and Issues
-* Version: 1.0.0
+* Version: 1.1.0
+
+* api link in class Visual.py not in config file
 
 ## Licencing and Dependencies
 MIT License: [Licence](https://github.com/Niko2357/F1Replay/blob/main/LICENSE)
