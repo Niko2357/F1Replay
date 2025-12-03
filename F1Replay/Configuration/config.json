@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-{
-  "race": {
-    "session_key": "9850",
-    "api_timing": "https://api.openf1.org/v1/timing",
-    "api_drivers": "https://api.openf1.org/v1/drivers",
-    "api_laps": "https://api.openf1.org/v1/laps",
-    "api_position": "https://api.openf1.org/v1/position",
-    "api_intervals": "https://api.openf1.org/v1/intervals",
-    "api_session_results": "https://api.openf1.org/v1/session_result"
-  }
-}
-=======
 {
   "race": {
     "session_key": "9850",
@@ -22,4 +9,3 @@
     "api_session_results": "https://api.openf1.org/v1/session_result"
   }
 }
->>>>>>> master
