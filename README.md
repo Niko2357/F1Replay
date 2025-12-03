@@ -1,8 +1,9 @@
 # F1Replay
 Vizualizes F1 race results by fetching API from OpenF1 website in local web browser. Uses multiprocessing for finishing results effectively.
 
+
 ## Requirements 
-* **Python 3.11.x**
+* **Python 3.11.x or 3.10.x**
 * Libraries: [here](##Used-Libraries)
 * Internet connection
 
