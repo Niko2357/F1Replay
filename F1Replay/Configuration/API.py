@@ -46,4 +46,3 @@ class API:
             return response.json()
         except Exception as e:
             return f"API couldn't be loaded: {e}"
->>>>>>> master

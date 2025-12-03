@@ -102,4 +102,3 @@ class Analysis:
             output_data.sort(key=lambda x: x[0])
             final_standings = [data for position, data in output_data]
             return final_standings
->>>>>>> master

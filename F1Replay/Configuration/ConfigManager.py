@@ -20,4 +20,3 @@ class ConfigManager:
             return key
         else:
             raise ValueError("Wrong input")
->>>>>>> master
