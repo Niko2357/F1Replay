@@ -1,6 +1,5 @@
 {
   "race": {
-    "session_key": "9850",
     "api_timing": "https://api.openf1.org/v1/timing",
     "api_drivers": "https://api.openf1.org/v1/drivers",
     "api_laps": "https://api.openf1.org/v1/laps",
