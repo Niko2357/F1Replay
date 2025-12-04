@@ -24,7 +24,7 @@ Vizualizes F1 race results by fetching API from OpenF1 website in local web brow
   
 * Execute:
      ```bash
-    python -m streamlit run F1Replay/Visual.py
+    python -m streamlit run F1Replay/app.py
     ```
 
 ## Program Configuration
